@@ -12,3 +12,8 @@ One thing we loved doing together was taking photobooth pictures. This project i
 - Built basic website skeleton  
 
 <img width="946" height="575" alt="Screenshot 2025-07-10 at 20 09 12" src="https://github.com/user-attachments/assets/de22c283-889a-4896-a643-bdc1b2325f82" />
+
+**11/07/2025**  
+- Restarted set up because I didn't use Next.js (silly mistake!)
+- Created landing page
+- Created solo or duo page, saving if the option solo or due is picked using UseState hook 

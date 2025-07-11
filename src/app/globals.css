@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-   --background: url('/background.svg');
+  --background: url('/background.svg');
   --foreground: #171717;
 }
 
@@ -27,4 +27,8 @@ body {
 
 h1 {
   font-family: var(--font-micro5);
+}
+
+button {
+  font-family: var(--font-jersey10);
 }
