@@ -1,8 +1,10 @@
 'use client'
 import Link from "next/link";
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function soloOrDuoPage() {
+  const router = useRouter();
   const [soloHover, setSoloHover] = useState(false);
   const [duoHover, setDuoHover] = useState(false); 
 
@@ -31,6 +33,7 @@ export default function soloOrDuoPage() {
                       }`}
                       onMouseEnter={() => setSoloHover(true)}
                       onMouseLeave={() => setSoloHover(false)}
+                      onClick={() => router.push('/photoboothPage')}
                       >
                       SOLO
                     </button>
@@ -53,7 +56,8 @@ export default function soloOrDuoPage() {
                       duoHover ? 'scale-110' : 'scale-90 filter grayscale'
                       }`}
                       onMouseEnter={() => setDuoHover(true)}
-                      onMouseLeave={() => setDuoHover(false)}>
+                      onMouseLeave={() => setDuoHover(false)}
+                      onClick={() => router.push('/connectPage')}>
                       DUO
                     </button>
                     </Link>

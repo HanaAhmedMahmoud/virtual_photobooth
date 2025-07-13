@@ -16,4 +16,18 @@ One thing we loved doing together was taking photobooth pictures. This project i
 **11/07/2025**  
 - Restarted set up because I didn't use Next.js (silly mistake!)
 - Created landing page
-- Created solo or duo page, saving if the option solo or due is picked using UseState hook 
+- Created vertical or sqaure strip page, saving if the option vertical or square is picked using UseState hook 
+
+**12/07/2025**  
+- Created solo or duo page using the same idea as strip page, but changed UI design so it is on hover 
+- Sorted out laptop problems 
+
+**13/07/2025**  
+- Created Connect page
+- Created Connect to Booth Page
+- Created Create Booth Page 
+- Fixed some errors in solo or duo page (mainly variable names and bad code practices)
+
+
+
+

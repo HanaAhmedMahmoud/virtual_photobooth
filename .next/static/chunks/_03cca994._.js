@@ -18,15 +18,15 @@ var _s = __turbopack_context__.k.signature();
 ;
 function stripPage() {
     _s();
-    const [solo, setSoloClicked] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [duo, setDuoClicked] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const handleSoloClick = ()=>{
-        setSoloClicked(true);
-        setDuoClicked(false);
+    const [vertical, setVerticalClicked] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
+    const [square, setSquareClicked] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const handleVerticalClick = ()=>{
+        setVerticalClicked(true);
+        setSquareClicked(false);
     };
-    const handleDuoClick = ()=>{
-        setSoloClicked(false);
-        setDuoClicked(true);
+    const handleSqaureClick = ()=>{
+        setVerticalClicked(false);
+        setSquareClicked(true);
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "h-screen flex items-center justify-center text-9xl relative",
@@ -63,8 +63,8 @@ function stripPage() {
                             className: "flex flex-row items-start space-x-20",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                    onClick: handleSoloClick,
-                                    className: `w-auto flex-shrink-0 ${solo ? 'scale-110' : 'scale-90 filter grayscale'}`,
+                                    onClick: handleVerticalClick,
+                                    className: `w-auto flex-shrink-0 ${vertical ? 'scale-110' : 'scale-90 filter grayscale'}`,
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                         src: "/verticalStrip.svg",
                                         alt: "vertical strip",
@@ -80,8 +80,8 @@ function stripPage() {
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                    onClick: handleDuoClick,
-                                    className: `w-auto flex-shrink-0 ${duo ? 'scale-110' : 'scale-90 filter grayscale'}`,
+                                    onClick: handleSqaureClick,
+                                    className: `w-auto flex-shrink-0 ${square ? 'scale-110' : 'scale-90 filter grayscale'}`,
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                         src: "/sqaureStrip.svg",
                                         alt: "sqaure strip",
@@ -150,7 +150,7 @@ function stripPage() {
         columnNumber: 5
     }, this);
 }
-_s(stripPage, "tw9lqGODCYyWwqXEOfVDBNfcvx4=");
+_s(stripPage, "Y5kPUA6oHuFcdhcIZw1DljtPpBY=");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
 }

@@ -29,6 +29,15 @@ h1 {
   font-family: var(--font-micro5);
 }
 
+h2 {
+  font-family: var(--font-jersey10) !important;
+}
+
+input {
+  font-family: var(--font-jersey10) !important;
+}
+
+
 button {
   font-family: var(--font-jersey10);
 }
