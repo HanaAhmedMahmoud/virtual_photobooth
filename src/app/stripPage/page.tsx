@@ -4,17 +4,17 @@ import React, { useState } from 'react';
 
 export default function stripPage() {
 
-  const [solo, setSoloClicked] = useState(false);
-  const [duo, setDuoClicked] = useState(false)
+  const [vertical, setVerticalClicked] = useState(true);
+  const [square, setSquareClicked] = useState(false)
 
-  const handleSoloClick = () => {
-    setSoloClicked(true); 
-    setDuoClicked(false);
+  const handleVerticalClick = () => {
+    setVerticalClicked(true); 
+    setSquareClicked(false);
   };
 
-  const handleDuoClick = () => {
-    setSoloClicked(false); 
-    setDuoClicked(true);
+  const handleSqaureClick = () => {
+    setVerticalClicked(false); 
+    setSquareClicked(true);
   };
 
   return (
@@ -26,17 +26,17 @@ export default function stripPage() {
         <div className="flex flex-col justify-center items-center">
             <h1 className="text-center">SELECT STRIP TYPE</h1>
             <div className="flex flex-row items-start space-x-20"> 
-                <button onClick={handleSoloClick} 
+                <button onClick={handleVerticalClick} 
                 className={`w-auto flex-shrink-0 ${
-                    solo ? 'scale-110' : 'scale-90 filter grayscale'
+                    vertical ? 'scale-110' : 'scale-90 filter grayscale'
                 }`}
                 >
                     <img src="/verticalStrip.svg" alt="vertical strip" className="hover:scale-110 h-auto max-h-60"></img>
                 </button>
             
-               <button onClick={handleDuoClick} 
+               <button onClick={handleSqaureClick} 
                className={`w-auto flex-shrink-0 ${
-                    duo ? 'scale-110' : 'scale-90 filter grayscale'
+                    square ? 'scale-110' : 'scale-90 filter grayscale'
                 }`}
                 >
                     <img src="/sqaureStrip.svg" alt="sqaure strip" className="hover:scale-110 h-auto max-h-60"></img>
