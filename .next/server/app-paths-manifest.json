@@ -1,8 +1,7 @@
 {
-  "/connectPage/page": "app/connectPage/page.js",
-  "/connectToBoothPage/page": "app/connectToBoothPage/page.js",
-  "/createBoothPage/page": "app/createBoothPage/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/page": "app/page.js",
+  "/photoboothPage/page": "app/photoboothPage/page.js",
   "/soloOrDuoPage/page": "app/soloOrDuoPage/page.js",
   "/stripPage/page": "app/stripPage/page.js"
 }

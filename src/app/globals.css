@@ -41,3 +41,16 @@ input {
 button {
   font-family: var(--font-jersey10);
 }
+
+@keyframes fadeOut {
+  from {
+    opacity: 0.9;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.animate-fadeOut {
+  animation: fadeOut 0.2s ease-out forwards;
+}
