@@ -51,6 +51,8 @@ function photoboothPage() {
     const videoRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
     const canvasRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRouter"])();
+    const cameraSound = typeof Audio !== "undefined" ? new Audio('/camera.mp3') : null;
+    const beepSound = typeof Audio !== "undefined" ? new Audio('/beep.mp3') : null;
     const [countdownStep, setCountdownStep] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [photoIndex, setPhotoIndex] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(1);
     const [capturedPhotos, setCapturedPhotos] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
@@ -84,12 +86,16 @@ function photoboothPage() {
         ];
         steps[0] = steps[0] + photoNum;
         for(let i = 0; i < steps.length; i++){
+            if (i != 0 && i != steps.length - 1) {
+                beepSound?.play();
+            }
             setCountdownStep(steps[i]);
             await new Promise((resolve)=>setTimeout(resolve, 1000));
         }
         setCountdownStep(null);
         setShowFlash(true);
         setTimeout(()=>setShowFlash(false), 200);
+        cameraSound?.play();
         takePhoto(photoNum);
     };
     const takePhoto = (currentPhotoNum)=>{
@@ -130,12 +136,12 @@ function photoboothPage() {
                     alt: "heart"
                 }, void 0, false, {
                     fileName: "[project]/src/app/photoboothPage/page.tsx",
-                    lineNumber: 82,
+                    lineNumber: 89,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/photoboothPage/page.tsx",
-                lineNumber: 81,
+                lineNumber: 88,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -148,7 +154,7 @@ function photoboothPage() {
                             children: countdownStep
                         }, void 0, false, {
                             fileName: "[project]/src/app/photoboothPage/page.tsx",
-                            lineNumber: 87,
+                            lineNumber: 94,
                             columnNumber: 17
                         }, this),
                         !countdownStep && !photoDone && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -159,7 +165,7 @@ function photoboothPage() {
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/photoboothPage/page.tsx",
-                            lineNumber: 93,
+                            lineNumber: 100,
                             columnNumber: 17
                         }, this),
                         photoDone && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -168,7 +174,7 @@ function photoboothPage() {
                             children: "RESULTS"
                         }, void 0, false, {
                             fileName: "[project]/src/app/photoboothPage/page.tsx",
-                            lineNumber: 99,
+                            lineNumber: 106,
                             columnNumber: 18
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -180,7 +186,7 @@ function photoboothPage() {
                                     className: "absolute shadow-lg w-[500px] h-[375px]"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/photoboothPage/page.tsx",
-                                    lineNumber: 104,
+                                    lineNumber: 111,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("canvas", {
@@ -188,31 +194,31 @@ function photoboothPage() {
                                     className: "hidden"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/photoboothPage/page.tsx",
-                                    lineNumber: 105,
+                                    lineNumber: 112,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/photoboothPage/page.tsx",
-                            lineNumber: 103,
+                            lineNumber: 110,
                             columnNumber: 13
                         }, this),
                         showFlash && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "fixed top-0 left-0 w-full h-full bg-white opacity-90 animate-fadeOut"
                         }, void 0, false, {
                             fileName: "[project]/src/app/photoboothPage/page.tsx",
-                            lineNumber: 109,
+                            lineNumber: 116,
                             columnNumber: 17
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/photoboothPage/page.tsx",
-                    lineNumber: 85,
+                    lineNumber: 92,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/photoboothPage/page.tsx",
-                lineNumber: 84,
+                lineNumber: 91,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -222,18 +228,18 @@ function photoboothPage() {
                     alt: "heart"
                 }, void 0, false, {
                     fileName: "[project]/src/app/photoboothPage/page.tsx",
-                    lineNumber: 115,
+                    lineNumber: 122,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/photoboothPage/page.tsx",
-                lineNumber: 114,
+                lineNumber: 121,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/photoboothPage/page.tsx",
-        lineNumber: 80,
+        lineNumber: 87,
         columnNumber: 5
     }, this);
 }

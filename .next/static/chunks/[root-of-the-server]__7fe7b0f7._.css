@@ -345,10 +345,6 @@
 @layer components;
 
 @layer utilities {
-  .pointer-events-none {
-    pointer-events: none;
-  }
-
   .absolute {
     position: absolute;
   }
@@ -383,10 +379,6 @@
 
   .left-30 {
     left: calc(var(--spacing) * 30);
-  }
-
-  .z-50 {
-    z-index: 50;
   }
 
   .mx-10 {

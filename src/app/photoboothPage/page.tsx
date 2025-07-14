@@ -8,6 +8,9 @@ export default function photoboothPage() {
 
   const router = useRouter(); 
   
+  const cameraSound = typeof Audio !== "undefined" ? new Audio('/camera.mp3') : null;
+  const beepSound = typeof Audio !== "undefined" ? new Audio('/beep.mp3') : null;
+
   const [countdownStep, setCountdownStep] = useState<string | null>(null);
   const [photoIndex, setPhotoIndex] = useState(1); 
   const [capturedPhotos, setCapturedPhotos] = useState<string[]>([]); 
@@ -36,12 +39,16 @@ export default function photoboothPage() {
         const steps = [...countDownSteps];
         steps[0] = steps[0] + photoNum;
         for (let i = 0; i < steps.length; i++) {
+            if(i != 0 && i != steps.length - 1){
+                beepSound?.play();
+            }
             setCountdownStep(steps[i]);
             await new Promise((resolve) => setTimeout(resolve, 1000));
         }
         setCountdownStep(null);
         setShowFlash(true);
         setTimeout(() => setShowFlash(false), 200);
+        cameraSound?.play();
         takePhoto(photoNum);
     };
 

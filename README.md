@@ -28,6 +28,12 @@ One thing we loved doing together was taking photobooth pictures. This project i
 - Created Create Booth Page 
 - Fixed some errors in solo or duo page (mainly variable names and bad code practices)
 
+**14/07/2025**  
+- Created solo photobooth page 
+- Learnt how to encorporate video 
+- Learnt how to encorporate sound effects
+- Implemented flash animation 
+- Count down was suprisingly difficult, gotten more used to useRef hook 
 
 
 
