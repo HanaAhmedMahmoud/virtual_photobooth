@@ -1,13 +1,13 @@
 'use client'
 import Link from "next/link";
 import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useNumOfPeopleStore, useStripStore } from "../store";
 
 export default function soloOrDuoPage() {
-  const router = useRouter();
   const [soloHover, setSoloHover] = useState(false);
   const [duoHover, setDuoHover] = useState(false); 
-
+  const setNumOfPeople = useNumOfPeopleStore((state) => state.updatePeopleCount);
+   
   return (
     <div className="h-screen flex items-center justify-center text-9xl relative">
       <div className="absolute top-7 left-30">
@@ -33,7 +33,7 @@ export default function soloOrDuoPage() {
                       }`}
                       onMouseEnter={() => setSoloHover(true)}
                       onMouseLeave={() => setSoloHover(false)}
-                      onClick={() => router.push('/photoboothPage')}
+                      onClick={() => setNumOfPeople(1)}
                       >
                       SOLO
                     </button>
@@ -57,7 +57,7 @@ export default function soloOrDuoPage() {
                       }`}
                       onMouseEnter={() => setDuoHover(true)}
                       onMouseLeave={() => setDuoHover(false)}
-                      onClick={() => router.push('/connectPage')}>
+                      onClick={() => setNumOfPeople(2)}>
                       DUO
                     </button>
                     </Link>

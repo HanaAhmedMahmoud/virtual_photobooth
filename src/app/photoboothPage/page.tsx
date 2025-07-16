@@ -104,7 +104,7 @@ export default function photoboothPage() {
 
             {photoDone && (
                  <button className="h-20 w-110 my-8 text-7xl bg-[#FFDBFB] outline-solid outline-2 outline-[#D1029D] rounded-3xl hover:scale-110"
-                 onClick={() => router.push('/finalPage')}>RESULTS</button>
+                 onClick={() => router.push('/resultsPage')}>RESULTS</button>
             )}
 
             <div className="relative bg-[#FFDBFB] w-[520px] h-[395px] flex items-center justify-center"> 

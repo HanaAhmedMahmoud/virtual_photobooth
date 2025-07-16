@@ -36,4 +36,6 @@ One thing we loved doing together was taking photobooth pictures. This project i
 - Count down was suprisingly difficult, gotten more used to useRef hook 
 
 
-
+**16/07/2025**  
+- Started results page
+- Learnt how to use zustand and created custom hooks to save the strip type and the number of people in the booth as global variables / states 

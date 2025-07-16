@@ -1,11 +1,13 @@
 'use client'
 import Link from "next/link";
 import React, { useState } from 'react';
+import { useStripStore } from "../store";
 
 export default function stripPage() {
 
   const [vertical, setVerticalClicked] = useState(true);
   const [square, setSquareClicked] = useState(false)
+  const setStrip = useStripStore((state) => state.updateStripType);
 
   const handleVerticalClick = () => {
     setVerticalClicked(true); 
@@ -43,7 +45,10 @@ export default function stripPage() {
                </button>
             </div>
             <Link href="/soloOrDuoPage">
-              <button className="h-20 w-110 my-10 text-7xl bg-[#FFDBFB] outline-solid outline-2 outline-[#D1029D] rounded-3xl hover:scale-110">CONFIRM</button>
+              <button className="h-20 w-110 my-10 text-7xl bg-[#FFDBFB] outline-solid outline-2 outline-[#D1029D] rounded-3xl hover:scale-110"
+              onClick={() => {
+                  setStrip(vertical ? "vertical" : "square");
+               }}>CONFIRM</button>
             </Link>
         </div>
       </div>
