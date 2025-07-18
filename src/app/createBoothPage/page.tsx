@@ -1,5 +1,5 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 'use client'
-import Link from 'next/link';
 import { useState } from 'react';
 export default function connectPage() {
   const code = "PLACEHOLDER";
@@ -9,7 +9,7 @@ export default function connectPage() {
     try {
       await navigator.clipboard.writeText(code);
       setMessage("copied successfully :)") 
-    } catch (err) {
+    } catch {
       setMessage("error occurred :(")
     }
   };

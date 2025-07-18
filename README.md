@@ -39,3 +39,8 @@ One thing we loved doing together was taking photobooth pictures. This project i
 **16/07/2025**  
 - Started results page
 - Learnt how to use zustand and created custom hooks to save the strip type and the number of people in the booth as global variables / states 
+
+**18/07/2025**
+- Finished the photobooth experience for solo players!
+- Photos are a little goofy (stretched), debating keeping it for the vibes or changing 
+- Need to implement download and restart button (tomorrows job!)

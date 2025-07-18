@@ -27,23 +27,23 @@ export default function connectPage() {
       <div className="bg-white h-2/3 w-2/3 outline-solid outline-4 outline-[#FFDBFB]">
         <div className="flex justify-center items-center h-full">
           <div className="flex flex-row justify-center items-center"> 
-          {vertical && (
+          {!vertical && (
               <div>
-                 <img src="/verticalStrip.svg" alt="vertical strip" className="h-auto max-h-100 mx-10 relative"></img>
-                  <div className="grid grid-cols-4 gap-6 absolute">
+                 <img src="/verticalStrip.svg" alt="vertical strip" className="h-auto max-h-100 mx-20 relative"></img>
+                  <div className="grid grid-rows-4 gap-3 absolute top-54 left-124">
                   {[0, 2, 4, 6].map((index) => {
                     return (
                       <img
                         key={index}
                         src={capturedPhotos[index]}
                         alt={`Photo ${index + 1}`}
-                        className="w-[300px] h-auto rounded-xl border-4 border-[#FFDBFB] shadow-md"
+                        className="w-[120px] h-[73px] rounded-xl border-4 border-[#FFDBFB] shadow-md"
                       />
                     );
                   })}
                 </div>
               </div> )}
-              {!vertical && (
+              {vertical && (
               <div>
                  <img src="/sqaureStrip.svg" alt="square strip" className="h-auto max-h-120 mx-10 relative"></img>
                  <div className="grid grid-rows-2 grid-cols-2 gap-3 absolute top-68 left-100">
