@@ -1,6 +1,9 @@
+/* eslint-disable @typescript-eslint/no-wrapper-object-types */
+/* eslint-disable react-hooks/rules-of-hooks */
 'use client'
 import { useRouter } from 'next/navigation';
 import {useEffect, useRef, useState} from 'react'
+import { usePhotoStore } from '../store';
 
 export default function photoboothPage() {
   const videoRef = useRef<HTMLVideoElement|null>(null); 
@@ -12,7 +15,7 @@ export default function photoboothPage() {
   const beepSound = typeof Audio !== "undefined" ? new Audio('/beep.mp3') : null;
 
   const [countdownStep, setCountdownStep] = useState<string | null>(null);
-  const [photoIndex, setPhotoIndex] = useState(1); 
+  const [, setPhotoIndex] = useState(1); 
   const [capturedPhotos, setCapturedPhotos] = useState<string[]>([]); 
   const [photoDone, setPhotoDone] = useState<Boolean>(false); 
   const [showFlash, setShowFlash] = useState(false);
@@ -20,6 +23,8 @@ export default function photoboothPage() {
   const totalPhotos = 4 
 
   const countDownSteps = ['PHOTO ','3...','2...','1...','SAY CHEESE!']; 
+
+  const setCapturedPhotosZustand = usePhotoStore((state) => state.setCapturedPhotos);
 
   //webcam!
   useEffect(() => {
@@ -34,6 +39,15 @@ export default function photoboothPage() {
    useEffect(() => {
     startPhotobooth();
   }, []); 
+
+  //save photos uploaded
+  useEffect(() => {
+    if (photoDone) {
+      setCapturedPhotosZustand(capturedPhotos);
+    }
+  }, [photoDone, capturedPhotos]);
+
+  
 
     const startCountdown = async (photoNum: number) => {
         const steps = [...countDownSteps];

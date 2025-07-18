@@ -25,3 +25,13 @@ export const useNumOfPeopleStore = create<numOfPeopleStore>((set) => ({
 		set({peopleCount: numOfPeople})
 	}
 })); 
+
+type photoStore = {
+  capturedPhotos: string[];
+  setCapturedPhotos: (photos: string[]) => void;
+};
+
+export const usePhotoStore = create<photoStore>((set) => ({
+  capturedPhotos: [],
+  setCapturedPhotos: (photos) => set({ capturedPhotos: photos }),
+}));

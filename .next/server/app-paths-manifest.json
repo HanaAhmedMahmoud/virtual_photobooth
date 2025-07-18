@@ -1,5 +1,9 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/page": "app/page.js",
+  "/photoboothPage/page": "app/photoboothPage/page.js",
+  "/resultsPage/page": "app/resultsPage/page.js",
   "/soloOrDuoPage/page": "app/soloOrDuoPage/page.js",
   "/stripPage/page": "app/stripPage/page.js"
 }

@@ -39,6 +39,7 @@ var { g: global, __dirname } = __turbopack_context__;
 {
 __turbopack_context__.s({
     "useNumOfPeopleStore": (()=>useNumOfPeopleStore),
+    "usePhotoStore": (()=>usePhotoStore),
     "useStripStore": (()=>useStripStore)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zustand$2f$esm$2f$react$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/zustand/esm/react.mjs [app-ssr] (ecmascript)");
@@ -59,6 +60,12 @@ const useNumOfPeopleStore = (0, __TURBOPACK__imported__module__$5b$project$5d2f$
                 peopleCount: numOfPeople
             });
         }
+    }));
+const usePhotoStore = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zustand$2f$esm$2f$react$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["create"])((set)=>({
+        capturedPhotos: [],
+        setCapturedPhotos: (photos)=>set({
+                capturedPhotos: photos
+            })
     }));
 }}),
 "[project]/src/app/stripPage/page.tsx [app-ssr] (ecmascript)": ((__turbopack_context__) => {
